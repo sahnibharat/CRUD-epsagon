@@ -4,8 +4,8 @@ var dynamodb = new AWS.DynamoDB()
 const epsagon = require('epsagon');
 
 epsagon.init({
-    token: '<your-token>',
-    appName: '<choose-your-app-name>',
+    token: 'b91d1948-2200-4eb6-91ef-b4704024c055',
+    appName: 'toby-nuatu-demo',
     metadataOnly: false,
 });
 
