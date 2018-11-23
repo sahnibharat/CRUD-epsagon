@@ -1,7 +1,17 @@
 const AWS = require('aws-sdk');
 var dynamodb = new AWS.DynamoDB()
 
-exports.handler = async message => {
+const epsagon = require('epsagon');
+
+epsagon.init({
+    token: '<your-token>',
+    appName: '<choose-your-app-name>',
+    metadataOnly: false,
+});
+
+// And wrap your lambda entry point (hello for example) as in this example:
+module.exports.hello = epsagon.lambdaWrapper(async message => {
+   
   console.log(message);
   let userId = message.pathParameters.id
   let params = {
@@ -20,4 +30,5 @@ exports.handler = async message => {
     headers: {},
     body: JSON.stringify(results.Item)
   };
-}
+});
+
