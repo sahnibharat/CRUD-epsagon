@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  UserPoolClientLambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Description: ''
+      Handler: index.handler
+      MemorySize: 128
+      Role: >-
+        arn:aws:iam::448506148619:role/firstab59c7984_userpoolclient_lambda_role-bharat
+      Runtime: nodejs8.10
+      Timeout: 300
